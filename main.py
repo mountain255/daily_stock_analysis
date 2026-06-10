@@ -372,7 +372,7 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument(
         '--port',
         type=int,
-        default=8000,
+        default=8001,
         help='FastAPI 服务端口（默认 8000）'
     )
 
@@ -891,7 +891,7 @@ def main() -> int:
     if start_serve:
         if args.host == '0.0.0.0' and os.getenv('WEBUI_HOST'):
             args.host = os.getenv('WEBUI_HOST')
-        if args.port == 8000 and os.getenv('WEBUI_PORT'):
+        if args.port == 8001 and os.getenv('WEBUI_PORT'):
             args.port = int(os.getenv('WEBUI_PORT'))
         _warn_if_public_webui_without_auth(args.host)
 
